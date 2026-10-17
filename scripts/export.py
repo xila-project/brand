@@ -8,6 +8,7 @@ import json
 import cairosvg
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
+from fontTools.varLib.instancer import instantiateVariableFont
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,7 +52,9 @@ def wordmark():
     """Return outlined glyphs and their exact ink bounds in font units."""
     from fontTools.pens.boundsPen import BoundsPen
     from fontTools.pens.transformPen import TransformPen
-    font = TTFont(ROOT / CONFIG["font"])
+    font = TTFont(ROOT / CONFIG["font"], recalcTimestamp=False)
+    if "fvar" in font:
+        instantiateVariableFont(font, {"wght": CONFIG["font_weight"]}, inplace=True)
     glyphs = font.getGlyphSet()
     cmap = font.getBestCmap()
     commands = []
@@ -97,6 +100,22 @@ def lockup(mark_color, text_color):
 
 
 def main():
+    # Preserve the upstream font timestamps for deterministic local web exports.
+    for style, source in (("normal", CONFIG["font"]), ("italic", CONFIG["italic_font"])):
+        webfont = TTFont(ROOT / source, recalcTimestamp=False)
+        webfont.flavor = "woff2"
+        target = ROOT / "assets/typography" / f"Montserrat-{style}.woff2"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        webfont.save(target)
+    write("assets/typography/OFL.txt", (ROOT / "fonts/OFL-Montserrat.txt").read_text())
+    family = CONFIG["typography"]["family"]
+    faces = "\n\n".join(
+        f'@font-face {{\n  font-family: "{family}";\n'
+        f'  src: url("./Montserrat-{style}.woff2") format("woff2");\n'
+        f'  font-style: {style};\n  font-weight: 100 900;\n  font-display: swap;\n}}'
+        for style in ("normal", "italic")
+    )
+    write("assets/typography/montserrat.css", faces + "\n")
     for name in ("ink", "black", "white", "indigo"):
         content = svg(64, 64, symbol(COLORS[name]), f"Xila symbol — {name}")
         write(f"assets/symbol/xila-symbol-{name}.svg", content)

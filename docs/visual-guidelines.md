@@ -21,9 +21,25 @@ Separations between neighboring ends are 8 units. The original used thickness 20
 
 Leave at least 16 units (one quarter of the symbol width) clear around a standalone symbol. Exported bare SVGs have a tight viewBox; provide this margin in the placement. The avatar includes extra crop-safe space.
 
-The horizontal lockup uses a 20-unit gap and a 56-unit visible wordmark height against the 64-unit symbol. The lettering is outlined from the bundled DejaVu Sans Bold font. Do not substitute a system font in a finished lockup.
+The horizontal lockup uses a 20-unit gap and a 56-unit visible wordmark height against the 64-unit symbol. The lettering is outlined from the bundled Montserrat Bold (700) font. Do not substitute a system font in a finished lockup.
 
 Use the standalone symbol for favicons and compact icons. 16px is the initial minimum for the unpadded symbol; inspect it at its actual device scale. The full lockup should have a symbol at least 24px high. Pixel hinting or a separate micro-size master may be needed for low-DPI embedded screens; these exports do not certify rendering on every target display.
+
+## Typography
+
+Montserrat is the shared proportional family.
+
+| Role | Weight | Usage |
+| --- | --- | --- |
+| Text | Regular 400 | Paragraphs, UI text and documentation |
+| Headings | SemiBold 600 | Titles and section headings |
+| Wordmark / emphasis | Bold 700 | The Xila wordmark and strong text |
+
+Use the local variable WOFF2 exports for normal and italic styles on the website and browser demo. Keep the supplied OFL notice with deployed fonts. The source TTF files are unmodified upstream Montserrat 9.000 files, recorded in `fonts/provenance.json`. The wordmark instantiates weight 700 before outlining.
+
+Unification concerns family and hierarchy, not identical binaries on every target. Embedded builds retain their current Montserrat Regular subsets at 10/14/18/28px, rather than adding weights to flash without a demonstrated UI need. Render and verify target-specific glyphs through the existing LVGL converter. The terminal keeps Unscii at its current sizes; code on the website keeps its existing monospace stack. Never apply Montserrat to terminal cells or code blocks merely to make every element use one font.
+
+Use this hierarchy on future documents and templates; the current change does not create new document templates or certify small-screen rendering.
 
 ## Palette
 
@@ -51,4 +67,4 @@ Do not stretch, rotate, round the modules, close their gaps, add shadows/gradien
 
 ## Status
 
-The symbol direction was selected in conversation. The layout rules, font lockup and optional palette are the initial working specification packaged with it. Future changes should receive a visual review and a version update. Similarity research was preliminary; it does not establish exclusivity.
+The symbol direction was selected in conversation. The Montserrat family and 400/600/700 hierarchy were subsequently selected for unification. The layout rules and optional palette are the initial working specification packaged with it. Future changes should receive a visual review and a version update. Similarity research was preliminary; it does not establish exclusivity.

@@ -1,6 +1,6 @@
 {
   "name": "Xila",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "direction": "Continuity",
   "colors": {
     "ink": "#171B25",
@@ -10,10 +10,20 @@
     "indigo": "#8D9EFF"
   },
   "accent_status": "Optional exploration; monochrome is the primary identity.",
-  "font": "fonts/DejaVuSans-Bold.ttf",
+  "font": "fonts/Montserrat-Variable.ttf",
   "symbol_units": 64,
   "clear_space_units": 16,
   "minimum_symbol_pixels": 16,
   "horizontal_gap_units": 20,
-  "wordmark_cap_height_units": 56
+  "wordmark_cap_height_units": 56,
+  "font_weight": 700,
+  "italic_font": "fonts/Montserrat-Italic-Variable.ttf",
+  "typography": {
+    "family": "Montserrat",
+    "body_weight": 400,
+    "heading_weight": 600,
+    "emphasis_weight": 700,
+    "embedded": "Montserrat Regular 400 with localized glyph subsets",
+    "terminal": "Unscii; retain the existing monospace role"
+  }
 }

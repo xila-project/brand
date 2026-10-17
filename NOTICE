@@ -9,5 +9,7 @@ The Continuity symbol and generated assets revise the original Xila artwork
 on 2026-10-17: thinner modules and wider separations, with the original
 orientation and four-module construction retained.
 
-Wordmark glyphs originate in DejaVu Sans Bold. The bundled font retains its
-own license and notices in fonts/LICENSE-DejaVu.txt.
+The identity was updated to Montserrat on 2026-10-17 (version 1.1.0).
+Wordmark glyphs originate in Montserrat Bold (700). The bundled Montserrat
+font software retains its SIL Open Font License in fonts/OFL-Montserrat.txt.
+See fonts/provenance.json for upstream sources and hashes.

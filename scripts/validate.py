@@ -6,6 +6,7 @@ import hashlib
 import json
 import re
 from PIL import Image
+from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parents[1]
 NS = "{http://www.w3.org/2000/svg}"
@@ -32,6 +33,24 @@ def main():
     actual = {str(p.relative_to(ROOT)) for folder in ("assets", "exports", "integrations/website/images")
               for p in (ROOT / folder).rglob("*") if p.is_file()}
     assert actual == set(manifest["sha256"]), "Manifest omits or invents assets"
+
+    config = json.loads((ROOT / "source/identity.json").read_text())
+    assert config["font_weight"] == 700
+    assert config["typography"]["family"] == "Montserrat"
+    provenance = json.loads((ROOT / "fonts/provenance.json").read_text())
+    for name, info in provenance["files"].items():
+        assert hashlib.sha256((ROOT / "fonts" / name).read_bytes()).hexdigest() == info["sha256"]
+    for style in ("normal", "italic"):
+        font = TTFont(ROOT / f"assets/typography/Montserrat-{style}.woff2")
+        assert "Montserrat" in font["name"].getDebugName(1)
+        weight = next(axis for axis in font["fvar"].axes if axis.axisTag == "wght")
+        assert weight.minValue <= 400 and weight.maxValue >= 700
+        assert (font["post"].italicAngle != 0) == (style == "italic")
+    assert (ROOT / "assets/typography/OFL.txt").read_bytes() == (ROOT / "fonts/OFL-Montserrat.txt").read_bytes()
+    css = (ROOT / "assets/typography/montserrat.css").read_text()
+    assert "https://" not in css
+    for target in re.findall(r'url\("([^"]+)"\)', css):
+        assert (ROOT / "assets/typography" / target).is_file()
 
     for path in (ROOT / "assets").rglob("*.svg"):
         doc = ET.parse(path).getroot()

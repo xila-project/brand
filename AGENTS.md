@@ -8,6 +8,7 @@ This repository owns Xila's visual identity and reusable artwork. It is not the 
 - `source/symbol.svg` is the editable geometry master. Its current 64-unit viewBox contains four 18-by-38-unit rectangles with 8-unit end separations.
 - `source/identity.json` owns palette, font, spacing and identity version. Prefer reading these values over duplicating them in scripts or documentation.
 - Black/white are the primary identity. Ink/paper are neutral presentation colors. Indigo remains optional; do not silently promote it to the primary brand color.
+- Montserrat is the shared family: Regular 400 for text, SemiBold 600 for headings, Bold 700 for the wordmark and emphasis. Preserve the embedded Regular-only subsets unless the task explicitly needs another weight. Monospace content is a separate semantic role; keep Unscii in the existing terminal.
 - Keep documentation in English, with concise, concrete instructions and root-relative file paths in prose. Preserve the spelling **Xila**.
 
 ## Sources, generated files and history
