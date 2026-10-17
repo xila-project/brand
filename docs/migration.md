@@ -34,4 +34,10 @@ The repository was created as private. Website deployment remains a separate ste
 
 ## Future updates
 
+### Typography in identity 1.1.0
+
+Copy the complete `assets/typography/` directory into the consumer's static `fonts/` directory, including `OFL.txt`. Load `montserrat.css` locally. It declares variable normal and italic Montserrat faces; consumers use 400 for text, 600 for headings and 700 for emphasis. Keep monospace code and terminal fonts independent. For VitePress, set `--vp-font-family-base` to Montserrat while preserving `--vp-font-family-mono`.
+
+Regenerated horizontal logos already contain Montserrat Bold outlines and need no font download. Record the exact 1.1.0 import commit beside the deployment copies. The embedded OS already uses Montserrat Regular and does not need additional font weights for this update.
+
 Change the master, regenerate, validate, review and release in brand. Import only the selected assets into consumers and record that version. Preserve old releases; avoid moving `main` references for reproducible builds. Automating this process can be a later, separate change.

@@ -20,7 +20,7 @@ The identity keeps the original four rectangular modules. The revised symbol use
 | Raster integrations | [PNG exports](exports/png/) at 16–1024 pixels |
 | Website migration | [Compatibility exports](integrations/website/) |
 
-SVG lockups contain outlined lettering and need no installed font. `DejaVu Sans Bold` matches the selected proposal's lettering; the font and its license are included for reproducibility. It is a practical initial choice, not a bespoke typeface.
+SVG lockups contain outlined lettering and need no installed font. The wordmark uses **Montserrat Bold (700)**. Montserrat Regular (400) is the shared text family; SemiBold (600) is used for headings. Variable normal and italic WOFF2 exports are self-hosted by web consumers; no font CDN is required. The embedded OS retains its existing Regular glyph subsets and Unscii terminal font.
 
 ## Source of truth
 
@@ -32,6 +32,10 @@ SVG lockups contain outlined lettering and need no installed font. `DejaVu Sans 
 - [manifest.json](manifest.json): SHA-256 hashes for generated delivery assets.
 
 Black and white are the primary identity. Ink/paper are neutral presentation colors. Indigo is an optional exploration and is not required for adoption of the selected symbol.
+
+## Typography
+
+Use Montserrat across the logo, website, documents and proportional OS interface. See the typography section in `docs/visual-guidelines.md`. Web font delivery files and their OFL notice are in `assets/typography/`. The identity version is `1.1.0`.
 
 ## Regenerate
 
@@ -57,7 +61,7 @@ This explicit command replaces only the three existing logo files under `src/pub
 
 ## Licensing and attribution
 
-The repository retains the website's [Apache-2.0 license](LICENSE). Original Xila artwork: Alix ANNERAUD. The revised artwork is a derivative dated 17 October 2026. See [NOTICE](NOTICE), the original file manifest and the separate [font license](fonts/LICENSE-DejaVu.txt). This repository does not assert that Xila is a registered trademark or grant endorsement rights.
+The repository retains the website's [Apache-2.0 license](LICENSE). Original Xila artwork: Alix ANNERAUD. The revised artwork is a derivative dated 17 October 2026. See [NOTICE](NOTICE), the original file manifest and the separate [font license](fonts/OFL-Montserrat.txt). This repository does not assert that Xila is a registered trademark or grant endorsement rights.
 
 ## Agent instructions
 
