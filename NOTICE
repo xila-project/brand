@@ -1,0 +1,13 @@
+Xila visual identity
+Copyright 2026 Alix ANNERAUD
+
+The legacy logo assets were copied unchanged from xila-project/website,
+commit 490575c467bb108e2e1407e6cae0f91015cc6955.
+See legacy/provenance.json for individual source paths and hashes.
+
+The Continuity symbol and generated assets revise the original Xila artwork
+on 2026-10-17: thinner modules and wider separations, with the original
+orientation and four-module construction retained.
+
+Wordmark glyphs originate in DejaVu Sans Bold. The bundled font retains its
+own license and notices in fonts/LICENSE-DejaVu.txt.

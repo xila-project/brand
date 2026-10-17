@@ -1,0 +1,26 @@
+[
+  {
+    "source_repository": "xila-project/website",
+    "source_commit": "490575c467bb108e2e1407e6cae0f91015cc6955",
+    "source_path": "src/public/images/logo_dark.svg",
+    "git_blob_sha": "0ee5f9aa0761c7dbdecbc7851b81acd13dd87c85",
+    "sha256": "281d7753ef9fda23aa92be9c681c7fbcb6b90b2403223bf7a4d38a7d63bb5b3c",
+    "archive_path": "legacy/website/logo_dark.svg"
+  },
+  {
+    "source_repository": "xila-project/website",
+    "source_commit": "490575c467bb108e2e1407e6cae0f91015cc6955",
+    "source_path": "src/public/images/logo_light.svg",
+    "git_blob_sha": "3908e989ec415047ead7033b62d89b598b5d9b1a",
+    "sha256": "a3d34886fdd7bd1e79a8e02daa4581a3629120b11ec3fc80d45f0a622b3bf851",
+    "archive_path": "legacy/website/logo_light.svg"
+  },
+  {
+    "source_repository": "xila-project/website",
+    "source_commit": "490575c467bb108e2e1407e6cae0f91015cc6955",
+    "source_path": "src/public/images/logo_dark.png",
+    "git_blob_sha": "fe873e677d7c7eab87a2dd64c0c9229cb2c928c0",
+    "sha256": "262999ba2a980d0c5c8556ad112270511d3f5632595fdd0d10641c2b7a58635b",
+    "archive_path": "legacy/website/logo_dark.png"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "name": "Xila",
+  "version": "1.0.0",
+  "direction": "Continuity",
+  "colors": {
+    "ink": "#171B25",
+    "paper": "#F5F4F0",
+    "black": "#000000",
+    "white": "#FFFFFF",
+    "indigo": "#8D9EFF"
+  },
+  "accent_status": "Optional exploration; monochrome is the primary identity.",
+  "font": "fonts/DejaVuSans-Bold.ttf",
+  "symbol_units": 64,
+  "clear_space_units": 16,
+  "minimum_symbol_pixels": 16,
+  "horizontal_gap_units": 20,
+  "wordmark_cap_height_units": 56
+}
