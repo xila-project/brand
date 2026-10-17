@@ -58,3 +58,7 @@ This explicit command replaces only the three existing logo files under `src/pub
 ## Licensing and attribution
 
 The repository retains the website's [Apache-2.0 license](LICENSE). Original Xila artwork: Alix ANNERAUD. The revised artwork is a derivative dated 17 October 2026. See [NOTICE](NOTICE), the original file manifest and the separate [font license](fonts/LICENSE-DejaVu.txt). This repository does not assert that Xila is a registered trademark or grant endorsement rights.
+
+## Agent instructions
+
+[AGENTS.md](AGENTS.md) is the shared instruction source. `CLAUDE.md`, `GEMINI.md` and `.github/copilot-instructions.md` are relative symbolic links to it; Codex and OpenCode can read `AGENTS.md` directly.
