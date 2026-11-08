@@ -1,0 +1,62 @@
+[
+  {
+    "repository": "core",
+    "slug": "core",
+    "title": "Core",
+    "description": "Kernel subsystems and reusable libraries."
+  },
+  {
+    "repository": "platforms",
+    "slug": "platforms",
+    "title": "Platforms",
+    "description": "Platform drivers and runtime assembly."
+  },
+  {
+    "repository": "applications",
+    "slug": "applications",
+    "title": "Applications",
+    "description": "Native applications and WebAssembly guests."
+  },
+  {
+    "repository": "package_manager",
+    "slug": "package_manager",
+    "title": "Package manager",
+    "description": "Build, sign and verify application packages."
+  },
+  {
+    "repository": "registry",
+    "slug": "registry",
+    "title": "Registry",
+    "description": "Signed package metadata and publisher keys."
+  },
+  {
+    "repository": "workspace",
+    "slug": "workspace",
+    "title": "Workspace",
+    "description": "Shared tooling and cross-repository integration."
+  },
+  {
+    "repository": "website",
+    "slug": "website",
+    "title": "Website",
+    "description": "Documentation, tutorials and architecture guides."
+  },
+  {
+    "repository": "brand",
+    "slug": "brand",
+    "title": "Brand",
+    "description": "The visual identity of Xila."
+  },
+  {
+    "repository": "wasm_application_template",
+    "slug": "wasm_application_template",
+    "title": "WebAssembly app template",
+    "description": "A Rust starter for your first Xila application."
+  },
+  {
+    "repository": ".github",
+    "slug": "community",
+    "title": "Community",
+    "description": "Discover Xila and contribute to the project."
+  }
+]

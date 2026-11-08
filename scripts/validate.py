@@ -3,9 +3,11 @@
 from pathlib import Path
 from xml.etree import ElementTree as ET
 import hashlib
+import io
 import json
 import re
 from urllib.parse import urlsplit
+import cairosvg
 from PIL import Image
 from fontTools.ttLib import TTFont
 
@@ -109,6 +111,23 @@ def main():
         with Image.open(delivery) as image:
             assert image.size == (1280, 640), delivery
             assert image.convert("RGBA").getchannel("A").getextrema() == (255, 255), delivery
+
+    headers = json.loads((ROOT / "source/repository-headers.json").read_text())
+    assert len({entry["repository"] for entry in headers}) == len(headers)
+    for entry in headers:
+        for theme in ("light", "dark"):
+            path = ROOT / f"assets/headers/xila-{entry['slug']}-header-{theme}.svg"
+            assert path.is_file(), path
+            document = ET.parse(path).getroot()
+            assert document.get("viewBox") == "0 0 1280 224", path
+            raster = Image.open(io.BytesIO(cairosvg.svg2png(
+                url=str(path), output_width=320, output_height=56))).convert("RGBA")
+            alpha = raster.getchannel("A")
+            assert alpha.getextrema() == (0, 255), f"Header must be transparent: {path}"
+            assert all(alpha.getpixel(point) == 0 for point in
+                       ((0, 0), (319, 0), (0, 55), (319, 55))), path
+            title = document.find(f"{NS}title").text
+            assert entry["title"] in title and entry["description"] in title, path
 
     with Image.open(ROOT / "assets/social/xila-social-1280x640.png") as image:
         assert image.size == (1280, 640)

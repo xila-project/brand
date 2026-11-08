@@ -1,8 +1,15 @@
-# Xila visual identity
+<h1>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/headers/xila-brand-header-dark.svg">
+  <img src="assets/headers/xila-brand-header-light.svg" alt="Xila Brand — The visual identity of Xila." width="1280">
+</picture>
+</h1>
+
+[Documentation](https://www.xila.dev/docs/) ·
+[Try Xila](https://platforms.xila.dev/) ·
+[Community](https://matrix.to/#/#xila:anneraud.fr)
 
 The source assets, usage guide and exports for the **Monogram** identity adopted on 8 November 2026 (version 2.0.0).
-
-![Xila](assets/social/xila-social-1280x640.png?v=2.0.0)
 
 The symbol has four rounded diagonal arms around a separate central square. The supplied vector geometry and reviewed outlined lettering are kept in editable masters; generation needs no installed logo font.
 
@@ -18,6 +25,7 @@ The symbol has four rounded diagonal arms around a separate central square. The 
 | Organization / community avatar | [512px PNG](assets/avatar/xila-avatar-512.png) |
 | Repository social preview | [1280 × 640 PNG](assets/social/xila-social-1280x640.png?v=2.0.0) |
 | Per-repository social previews | [Ten repository-specific PNGs and SVGs](docs/repository-social-previews.md) |
+| README headers | [Transparent themed SVGs](docs/readme-headers.md) |
 | Browser tab | [SVG favicon](assets/favicon/favicon.svg) and [ICO fallback](assets/favicon/favicon.ico) |
 | Raster integrations | [PNG exports](exports/png/) at 16–1024 pixels |
 | Website migration | [Compatibility exports](integrations/website/) |
@@ -26,6 +34,7 @@ SVG lockups contain outlined lettering and need no installed font. The wordmark 
 
 ## Source of truth
 
+- [source/repository-headers.json](source/repository-headers.json): repository names and role summaries used for README headers.
 - [source/symbol.svg](source/symbol.svg): editable five-part monogram master.
 - [source/repository-social/](source/repository-social/): editable outlined social preview masters for the ten repositories.
 - [source/lockup.svg](source/lockup.svg): reviewed horizontal logo, with outlined lettering.
@@ -71,3 +80,13 @@ The repository retains the website's [Apache-2.0 license](LICENSE). Original Xil
 ## Agent instructions
 
 [AGENTS.md](AGENTS.md) is the shared instruction source. `CLAUDE.md`, `GEMINI.md` and `.github/copilot-instructions.md` are relative symbolic links to it; Codex and OpenCode can read `AGENTS.md` directly.
+
+<!-- xila:footer:start -->
+
+---
+
+Part of **[Xila](https://www.xila.dev/)** ·
+[Repositories](https://github.com/xila-project) ·
+[Community](https://matrix.to/#/#xila:anneraud.fr)
+
+<!-- xila:footer:end -->
