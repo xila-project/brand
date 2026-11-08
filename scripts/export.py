@@ -11,6 +11,7 @@ from fontTools.ttLib import TTFont
 from PIL import Image
 
 from svg_utils import clean
+from repository_headers import headers
 
 ROOT = Path(__file__).resolve().parents[1]
 SVG_NS = "http://www.w3.org/2000/svg"
@@ -134,6 +135,9 @@ def main():
         content = clean(master.read_text())
         write(f"assets/social/repositories/{master.name}", content)
         render(content, f"assets/social/repositories/{master.stem}.png", 1280, 640)
+
+    for name, content in headers(ROOT, CONFIG, symbol, svg):
+        write(f"assets/headers/{name}", content)
 
     files = sorted(p for folder in ("assets", "exports", "integrations/website/images")
                    for p in (ROOT / folder).rglob("*") if p.is_file())
