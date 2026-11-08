@@ -129,6 +129,12 @@ def main():
               (ROOT / f"assets/symbol/xila-symbol-{variant}.svg").read_text())
     render((ROOT / "assets/symbol/xila-symbol-white.svg").read_text(),
            "integrations/website/images/logo_dark.png", 1600, 1600)
+    # Repository previews are maintained centrally as outlined vector masters.
+    for master in sorted((ROOT / "source/repository-social").glob("*.svg")):
+        content = clean(master.read_text())
+        write(f"assets/social/repositories/{master.name}", content)
+        render(content, f"assets/social/repositories/{master.stem}.png", 1280, 640)
+
     files = sorted(p for folder in ("assets", "exports", "integrations/website/images")
                    for p in (ROOT / folder).rglob("*") if p.is_file())
     manifest = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
