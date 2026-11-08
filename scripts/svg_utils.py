@@ -3,7 +3,7 @@ from xml.etree import ElementTree as ET
 
 SVG_NS = "http://www.w3.org/2000/svg"
 ET.register_namespace("", SVG_NS)
-ELEMENTS = {"svg", "title", "g", "path", "rect"}
+ELEMENTS = {"svg", "title", "desc", "g", "path", "rect"}
 
 
 def clean(content):
@@ -18,7 +18,7 @@ def clean(content):
             for key in attributes
         ), "SVG masters must use explicit geometry and presentation attributes"
         result = ET.Element(f"{{{SVG_NS}}}{tag}", attributes)
-        if tag == "title":
+        if tag in ("title", "desc"):
             result.text = node.text
         for child in node:
             child = rebuild(child)

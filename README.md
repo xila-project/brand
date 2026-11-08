@@ -17,6 +17,7 @@ The symbol has four rounded diagonal arms around a separate central square. The 
 | Supplied white-symbol / black-text layout on a mid-tone background | [Principal SVG](assets/lockup/xila-horizontal-principal.svg) |
 | Organization / community avatar | [512px PNG](assets/avatar/xila-avatar-512.png) |
 | Repository social preview | [1280 × 640 PNG](assets/social/xila-social-1280x640.png?v=2.0.0) |
+| Per-repository social previews | [Ten repository-specific PNGs and SVGs](docs/repository-social-previews.md) |
 | Browser tab | [SVG favicon](assets/favicon/favicon.svg) and [ICO fallback](assets/favicon/favicon.ico) |
 | Raster integrations | [PNG exports](exports/png/) at 16–1024 pixels |
 | Website migration | [Compatibility exports](integrations/website/) |
@@ -26,6 +27,7 @@ SVG lockups contain outlined lettering and need no installed font. The wordmark 
 ## Source of truth
 
 - [source/symbol.svg](source/symbol.svg): editable five-part monogram master.
+- [source/repository-social/](source/repository-social/): editable outlined social preview masters for the ten repositories.
 - [source/lockup.svg](source/lockup.svg): reviewed horizontal logo, with outlined lettering.
 - [source/provenance.json](source/provenance.json): hashes of the ten original supplied files and lettering provenance.
 - [source/identity.json](source/identity.json): palette, font, spacing and version.

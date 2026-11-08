@@ -68,7 +68,7 @@ def main():
         assert doc.get("viewBox"), path
         assert doc.find(f"{NS}title") is not None, path
         assert path.read_text().count('xmlns=') == 1, path
-        assert all(node.tag in {f"{NS}{tag}" for tag in ("svg", "title", "g", "path", "rect")} for node in doc.iter()), path
+        assert all(node.tag in {f"{NS}{tag}" for tag in ("svg", "title", "desc", "g", "path", "rect")} for node in doc.iter()), path
         assert not any(k in ("class", "style", "data-name") or k.startswith("on") for node in doc.iter() for k in node.attrib), path
         assert not doc.findall(f".//{NS}text"), f"Unoutlined text in {path}"
         assert not doc.findall(f".//{NS}script"), path
@@ -99,6 +99,16 @@ def main():
                                 seen.add((c,d))
                                 todo.append((c,d))
             assert groups == 5, (path, groups)
+
+    social_masters = list((ROOT / "source/repository-social").glob("*.svg"))
+    assert social_masters, "No repository social preview masters"
+    for master in social_masters:
+        delivery = ROOT / "assets/social/repositories" / master.with_suffix(".png").name
+        assert delivery.is_file(), delivery
+        assert delivery.stat().st_size < 1_000_000, delivery
+        with Image.open(delivery) as image:
+            assert image.size == (1280, 640), delivery
+            assert image.convert("RGBA").getchannel("A").getextrema() == (255, 255), delivery
 
     with Image.open(ROOT / "assets/social/xila-social-1280x640.png") as image:
         assert image.size == (1280, 640)
