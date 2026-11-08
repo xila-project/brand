@@ -2,7 +2,7 @@
 
 The source assets, usage guide and exports for the **Monogram** identity adopted on 8 November 2026 (version 2.0.0).
 
-![Xila](assets/social/xila-social-1280x640.png)
+![Xila](assets/social/xila-social-1280x640.png?v=2.0.0)
 
 The symbol has four rounded diagonal arms around a separate central square. The supplied vector geometry and reviewed outlined lettering are kept in editable masters; generation needs no installed logo font.
 
@@ -16,7 +16,7 @@ The symbol has four rounded diagonal arms around a separate central square. The 
 | Symbol and name on a dark background | [Horizontal white SVG](assets/lockup/xila-horizontal-white.svg) |
 | Supplied white-symbol / black-text layout on a mid-tone background | [Principal SVG](assets/lockup/xila-horizontal-principal.svg) |
 | Organization / community avatar | [512px PNG](assets/avatar/xila-avatar-512.png) |
-| Repository social preview | [1280 × 640 PNG](assets/social/xila-social-1280x640.png) |
+| Repository social preview | [1280 × 640 PNG](assets/social/xila-social-1280x640.png?v=2.0.0) |
 | Browser tab | [SVG favicon](assets/favicon/favicon.svg) and [ICO fallback](assets/favicon/favicon.ico) |
 | Raster integrations | [PNG exports](exports/png/) at 16–1024 pixels |
 | Website migration | [Compatibility exports](integrations/website/) |
