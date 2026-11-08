@@ -1,5 +1,7 @@
 # Xila visual guidelines
 
+Logo design by [Martin Legand](https://www.behance.net/martinlegand).
+
 ## Direction
 
 Monogram is the identity adopted on 8 November 2026. Keep the four rounded diagonal arms, the separate center square and the square silhouette. Do not redraw it as the earlier four-rectangle Continuity mark.

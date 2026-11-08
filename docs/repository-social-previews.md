@@ -1,5 +1,7 @@
 # Repository social previews
 
+Logo design by [Martin Legand](https://www.behance.net/martinlegand).
+
 The ten Xila repository previews share the Monogram 2.0.0 identity: black background, white outlined lettering, the repository name, its role and its GitHub address. All artwork and export tooling are maintained here in brand; consumer repositories do not need image copies.
 
 ## Choose an image
