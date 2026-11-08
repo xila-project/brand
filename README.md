@@ -75,7 +75,7 @@ This explicit command replaces only the three existing logo files under `src/pub
 
 ## Licensing and attribution
 
-The repository retains the website's [Apache-2.0 license](LICENSE). Original Xila artwork: Alix ANNERAUD. The current monogram was supplied on 8 November 2026. Original exports are preserved under `legacy/2026-11-originals/`; earlier website originals remain unchanged. The supplied full-logo SVGs used live text. The reviewed outlined lettering differs slightly from their PNG references; see `source/provenance.json`. See [NOTICE](NOTICE), the original file manifest and the separate [font license](fonts/OFL-Montserrat.txt). This repository does not assert that Xila is a registered trademark or grant endorsement rights.
+The repository retains the website's [Apache-2.0 license](LICENSE). The current Monogram logo was designed by [Martin Legand](https://www.behance.net/martinlegand) and supplied on 8 November 2026. Earlier Xila artwork: Alix ANNERAUD. Original exports are preserved under `legacy/2026-11-originals/`; earlier website originals remain unchanged. The supplied full-logo SVGs used live text. The reviewed outlined lettering differs slightly from their PNG references; see `source/provenance.json`. See [NOTICE](NOTICE), the original file manifest and the separate [font license](fonts/OFL-Montserrat.txt). This repository does not assert that Xila is a registered trademark or grant endorsement rights.
 
 ## Agent instructions
 
@@ -88,5 +88,7 @@ The repository retains the website's [Apache-2.0 license](LICENSE). Original Xil
 Part of **[Xila](https://www.xila.dev/)** ·
 [Repositories](https://github.com/xila-project) ·
 [Community](https://matrix.to/#/#xila:anneraud.fr)
+
+Special thanks to [Martin Legand](https://www.behance.net/martinlegand) for generously designing the Xila logo.
 
 <!-- xila:footer:end -->

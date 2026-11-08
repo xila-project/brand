@@ -1,6 +1,6 @@
 {
   "date": "2026-11-08",
-  "description": "Five original SVG/PNG variants supplied by the project owner. Symbol geometry is unchanged. The reviewed lockup uses bundled Montserrat ExtraBold 800 outlines, preserving source positioning; its lettering differs slightly from the supplied raster.",
+  "description": "Five original SVG/PNG variants designed by Martin Legand and supplied by the project owner. Symbol geometry is unchanged. The reviewed lockup uses bundled Montserrat ExtraBold 800 outlines, preserving source positioning; its lettering differs slightly from the supplied raster.",
   "originals": [
     {
       "path": "legacy/2026-11-originals/Logo Alix - Blanc.png",
@@ -42,5 +42,9 @@
       "path": "legacy/2026-11-originals/Logo Alix - monogramme Noir.svg",
       "sha256": "16607935cb661fc7b58b96f346525adddb985a72b46dec8d1cfded35dc235db1"
     }
-  ]
+  ],
+  "designer": {
+    "name": "Martin Legand",
+    "portfolio": "https://www.behance.net/martinlegand"
+  }
 }

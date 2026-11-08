@@ -1,5 +1,7 @@
 # README headers
 
+Logo design by [Martin Legand](https://www.behance.net/martinlegand).
+
 Compact headers share the Monogram identity while naming each Xila repository and its role. The visible brand is **Xila**; `xila-project` remains the GitHub handle.
 
 ## Delivery files

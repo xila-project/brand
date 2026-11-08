@@ -11,6 +11,8 @@ This repository owns Xila's visual identity and reusable artwork. It is not the 
 - Montserrat is the shared family: Regular 400 for text, SemiBold 600 for headings, Bold 700 for emphasis, and ExtraBold 800 for the outlined wordmark. Preserve the embedded Regular-only subsets unless the task explicitly needs another weight. Monospace content is a separate semantic role; keep Unscii in the existing terminal.
 - Keep documentation in English, with concise, concrete instructions and root-relative file paths in prose. Preserve the spelling **Xila**.
 
+- Credit the Monogram logo designer, Martin Legand (https://www.behance.net/martinlegand), in artwork provenance and relevant deployment notes. Keep logo design credit distinct from Montserrat font licensing and historical artwork attribution.
+
 ## Sources, generated files and history
 
 | Location | Responsibility |
