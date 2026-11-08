@@ -1,10 +1,10 @@
 # Xila visual identity
 
-The source assets, usage guide and exports for the **Continuity** direction selected by Alix ANNERAUD on 17 October 2026.
+The source assets, usage guide and exports for the **Monogram** identity adopted on 8 November 2026 (version 2.0.0).
 
 ![Xila](assets/social/xila-social-1280x640.png)
 
-The identity keeps the original four rectangular modules. The revised symbol uses lighter strokes and wider separations. It deliberately remains abstract; it does not introduce a literal X.
+The symbol has four rounded diagonal arms around a separate central square. The supplied vector geometry and reviewed outlined lettering are kept in editable masters; generation needs no installed logo font.
 
 ## Get the right file
 
@@ -14,17 +14,20 @@ The identity keeps the original four rectangular modules. The revised symbol use
 | Symbol on a dark background | [White SVG](assets/symbol/xila-symbol-white.svg) |
 | Symbol and name on a light background | [Horizontal ink SVG](assets/lockup/xila-horizontal-ink.svg) |
 | Symbol and name on a dark background | [Horizontal white SVG](assets/lockup/xila-horizontal-white.svg) |
+| Supplied white-symbol / black-text layout on a mid-tone background | [Principal SVG](assets/lockup/xila-horizontal-principal.svg) |
 | Organization / community avatar | [512px PNG](assets/avatar/xila-avatar-512.png) |
 | Repository social preview | [1280 × 640 PNG](assets/social/xila-social-1280x640.png) |
 | Browser tab | [SVG favicon](assets/favicon/favicon.svg) and [ICO fallback](assets/favicon/favicon.ico) |
 | Raster integrations | [PNG exports](exports/png/) at 16–1024 pixels |
 | Website migration | [Compatibility exports](integrations/website/) |
 
-SVG lockups contain outlined lettering and need no installed font. The wordmark uses **Montserrat Bold (700)**. Montserrat Regular (400) is the shared text family; SemiBold (600) is used for headings. Variable normal and italic WOFF2 exports are self-hosted by web consumers; no font CDN is required. The embedded OS retains its existing Regular glyph subsets and Unscii terminal font.
+SVG lockups contain outlined lettering and need no installed font. The wordmark uses reviewed **Montserrat ExtraBold (800)** outlines. Montserrat Regular (400) is the shared text family; SemiBold (600) is used for headings. Variable normal and italic WOFF2 exports are self-hosted by web consumers; no font CDN is required. The embedded OS retains its existing Regular glyph subsets and Unscii terminal font.
 
 ## Source of truth
 
-- [source/symbol.svg](source/symbol.svg): editable four-rectangle master.
+- [source/symbol.svg](source/symbol.svg): editable five-part monogram master.
+- [source/lockup.svg](source/lockup.svg): reviewed horizontal logo, with outlined lettering.
+- [source/provenance.json](source/provenance.json): hashes of the ten original supplied files and lettering provenance.
 - [source/identity.json](source/identity.json): palette, font, spacing and version.
 - [docs/visual-guidelines.md](docs/visual-guidelines.md): construction and usage rules.
 - [docs/migration.md](docs/migration.md): migration from `xila-project/website`.
@@ -35,7 +38,7 @@ Black and white are the primary identity. Ink/paper are neutral presentation col
 
 ## Typography
 
-Use Montserrat across the logo, website, documents and proportional OS interface. See the typography section in `docs/visual-guidelines.md`. Web font delivery files and their OFL notice are in `assets/typography/`. The identity version is `1.1.0`.
+Use Montserrat across the logo, website, documents and proportional OS interface. See the typography section in `docs/visual-guidelines.md`. Web font delivery files and their OFL notice are in `assets/typography/`. The identity version is `2.0.0`. Body, heading and emphasis weights remain 400/600/700; the outlined logo uses 800.
 
 ## Regenerate
 
@@ -61,7 +64,7 @@ This explicit command replaces only the three existing logo files under `src/pub
 
 ## Licensing and attribution
 
-The repository retains the website's [Apache-2.0 license](LICENSE). Original Xila artwork: Alix ANNERAUD. The revised artwork is a derivative dated 17 October 2026. See [NOTICE](NOTICE), the original file manifest and the separate [font license](fonts/OFL-Montserrat.txt). This repository does not assert that Xila is a registered trademark or grant endorsement rights.
+The repository retains the website's [Apache-2.0 license](LICENSE). Original Xila artwork: Alix ANNERAUD. The current monogram was supplied on 8 November 2026. Original exports are preserved under `legacy/2026-11-originals/`; earlier website originals remain unchanged. The supplied full-logo SVGs used live text. The reviewed outlined lettering differs slightly from their PNG references; see `source/provenance.json`. See [NOTICE](NOTICE), the original file manifest and the separate [font license](fonts/OFL-Montserrat.txt). This repository does not assert that Xila is a registered trademark or grant endorsement rights.
 
 ## Agent instructions
 

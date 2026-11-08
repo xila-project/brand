@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-08",
+  "description": "Five original SVG/PNG variants supplied by the project owner. Symbol geometry is unchanged. The reviewed lockup uses bundled Montserrat ExtraBold 800 outlines, preserving source positioning; its lettering differs slightly from the supplied raster.",
+  "originals": [
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - Blanc.png",
+      "sha256": "1915998710930683d6325e2b248055b89f3679eacb388c68d31901e463abc201"
+    },
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - Blanc.svg",
+      "sha256": "cb28af740a78161293ee133dc6bd3cd81e85ab1f990b4c52e99ad46e0962e963"
+    },
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - Noir.png",
+      "sha256": "0455dac6b32bd4654080e96984944567c5c480f7dc0230d9e4dae3466fa33195"
+    },
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - Noir.svg",
+      "sha256": "16b2b39c2f3c7985f1c0989f427d09566bba7f4d77c0a76f4aec4a7ba00cad20"
+    },
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - Principale.png",
+      "sha256": "6911cf531f0e785dc43ab5156355bc943ed76013e72c660e4984f9fea00c5c6b"
+    },
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - Principale.svg",
+      "sha256": "41aab99b8a87f64304b7a7eb62757c446507c245c7acec5e47f48a2f294cf37f"
+    },
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - monogramme Blanc.png",
+      "sha256": "62ffb3acdbbab3aa0b8e55e4352fecdd28ea414a4d40979b72387385d2669e25"
+    },
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - monogramme Blanc.svg",
+      "sha256": "bdee24abf9f0de2d112e499758b7757a0a4755f1c7a7c5bc282392083a509421"
+    },
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - monogramme Noir.png",
+      "sha256": "fb55f8a8f30e0af75e92fce347f4938160536540a0983c36170f9ccc4581e4ac"
+    },
+    {
+      "path": "legacy/2026-11-originals/Logo Alix - monogramme Noir.svg",
+      "sha256": "16607935cb661fc7b58b96f346525adddb985a72b46dec8d1cfded35dc235db1"
+    }
+  ]
+}

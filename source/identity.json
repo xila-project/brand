@@ -1,7 +1,7 @@
 {
   "name": "Xila",
-  "version": "1.1.0",
-  "direction": "Continuity",
+  "version": "2.0.0",
+  "direction": "Monogram",
   "colors": {
     "ink": "#171B25",
     "paper": "#F5F4F0",
@@ -14,9 +14,7 @@
   "symbol_units": 64,
   "clear_space_units": 16,
   "minimum_symbol_pixels": 16,
-  "horizontal_gap_units": 20,
-  "wordmark_cap_height_units": 56,
-  "font_weight": 700,
+  "font_weight": 800,
   "italic_font": "fonts/Montserrat-Italic-Variable.ttf",
   "typography": {
     "family": "Montserrat",

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1710.4 617.46"><metadata><?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="XMP Core 6.0.0"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmpMM:DocumentID="xmp.did:cb9f5498-bb58-4572-8043-8c369e6bfb9b" xmpMM:InstanceID="xmp.iid:cb9f5498-bb58-4572-8043-8c369e6bfb9b" dcterms:provenance="https://cai-manifests.adobe.com/manifests/urn-c2pa-a74267ca-e640-42cf-af20-d2efdc20bbeb-adobe"> </rdf:Description></rdf:RDF></x:xmpmeta>
+<?xpacket end="w"?></metadata>
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: Montserrat-ExtraBold, Montserrat;
+        font-size: 487.34px;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="logotype">
+    <text class="cls-2" transform="translate(766.99 483.38) scale(.98 1)"><tspan class="cls-3" x="0" y="0">X</tspan><tspan x="354.3" y="0">ila</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-1" x="249.72" y="249.72" width="118.02" height="118.02" rx="4.4" ry="4.4"/>
+    <g>
+      <path class="cls-1" d="M374.18,403.63h-36.85v66.01c0,6.66,2.65,13.05,7.36,17.76l122.69,122.69c4.71,4.71,11.1,7.36,17.76,7.36h107.18c13.87,0,25.12-11.25,25.12-25.12v-107.21c0-6.66-2.65-13.05-7.36-17.76l-122.67-122.67c-4.71-4.71-11.1-7.36-17.76-7.36h-66.01v36.85c0,16.2-13.25,29.45-29.45,29.45Z"/>
+      <path class="cls-1" d="M403.63,243.27v36.85h66.01c6.66,0,13.05-2.65,17.76-7.36l122.69-122.69c4.71-4.71,7.36-11.1,7.36-17.76V25.14c0-13.87-11.25-25.12-25.12-25.12h-107.21c-6.66,0-13.05,2.65-17.76,7.36l-122.67,122.67c-4.71,4.71-7.36,11.1-7.36,17.76v66.01h36.85c16.2,0,29.45,13.25,29.45,29.45Z"/>
+      <path class="cls-1" d="M243.27,213.82h36.85v-66.01c0-6.66-2.65-13.05-7.36-17.76L150.08,7.36c-4.71-4.71-11.1-7.36-17.76-7.36H25.14C11.26,0,.02,11.25.02,25.12v107.21c0,6.66,2.65,13.05,7.36,17.76l122.67,122.67c4.71,4.71,11.1,7.36,17.76,7.36h66.01v-36.85c0-16.2,13.25-29.45,29.45-29.45Z"/>
+      <path class="cls-1" d="M213.82,374.18v-36.85h-66.01c-6.66,0-13.05,2.65-17.76,7.36L7.36,467.38c-4.71,4.71-7.36,11.1-7.36,17.76v107.18c0,13.87,11.25,25.12,25.12,25.12h107.21c6.66,0,13.05-2.65,17.76-7.36l122.67-122.67c4.71-4.71,7.36-11.1,7.36-17.76v-66.01h-36.85c-16.2,0-29.45-13.25-29.45-29.45Z"/>
+    </g>
+  </g>
+</svg>
