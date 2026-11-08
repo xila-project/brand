@@ -2,26 +2,21 @@
 
 ## Direction
 
-Continuity is the selected direction. Keep the abstract four-module construction, the square silhouette and the sharp corners. The symbol does not have to depict a letter. Associate it with the name Xila on introductory materials.
+Monogram is the identity adopted on 8 November 2026. Keep the four rounded diagonal arms, the separate center square and the square silhouette. Do not redraw it as the earlier four-rectangle Continuity mark.
 
 ## Construction
 
-The master uses a 64 × 64 unit viewBox. Each rectangle is 18 units thick and 38 units long. The four rectangles are rotations of one another around (32,32):
+`source/symbol.svg` preserves the supplied four paths and rounded center rectangle. The original 617.46-unit artwork is uniformly scaled into a 64 × 64 unit viewBox. The center square starts at (249.72, 249.72), measures 118.02 units on each side and has 4.4-unit corner radii before scaling. Keep the supplied path coordinates, corner radii and transparent separations.
 
-| Module | x | y | Width | Height |
-| --- | ---: | ---: | ---: | ---: |
-| Left/top | 0 | 0 | 18 | 38 |
-| Bottom/left | 0 | 46 | 38 | 18 |
-| Top/right | 26 | 0 | 38 | 18 |
-| Right/bottom | 46 | 26 | 18 | 38 |
+`source/lockup.svg` contains the same symbol group and the reviewed lettering outlines. The original complete layout is 1710.4 × 617.46 units, normalized to a height of 64 units. Exports use explicit paths, fills and transforms, with a single SVG namespace and no live text, CSS classes, Adobe metadata or external resources.
 
-Separations between neighboring ends are 8 units. The original used thickness 20, length 40 and separation 4 on the same normalized square. Maintain the orientation and the rectangular proportions.
+The ten original designer exports remain byte-identical in `legacy/2026-11-originals/`. `source/provenance.json` records their hashes. The original complete SVGs declared live Montserrat ExtraBold text with a conflicting weight 700 declaration. The reviewed portable outlines use the bundled variable font at 800 and preserve source positioning; they differ slightly from the original PNG lettering. Do not claim that the supplied PNGs and the outlined lockup are pixel-identical.
 
 ## Spacing and sizes
 
 Leave at least 16 units (one quarter of the symbol width) clear around a standalone symbol. Exported bare SVGs have a tight viewBox; provide this margin in the placement. The avatar includes extra crop-safe space.
 
-The horizontal lockup uses a 20-unit gap and a 56-unit visible wordmark height against the 64-unit symbol. The lettering is outlined from the bundled Montserrat Bold (700) font. Do not substitute a system font in a finished lockup.
+Keep the spacing and lettering positions in `source/lockup.svg`. Do not substitute a system font or re-typeset the finished lockup.
 
 Use the standalone symbol for favicons and compact icons. 16px is the initial minimum for the unpadded symbol; inspect it at its actual device scale. The full lockup should have a symbol at least 24px high. Pixel hinting or a separate micro-size master may be needed for low-DPI embedded screens; these exports do not certify rendering on every target display.
 
@@ -33,9 +28,10 @@ Montserrat is the shared proportional family.
 | --- | --- | --- |
 | Text | Regular 400 | Paragraphs, UI text and documentation |
 | Headings | SemiBold 600 | Titles and section headings |
-| Wordmark / emphasis | Bold 700 | The Xila wordmark and strong text |
+| Emphasis | Bold 700 | Strong text |
+| Wordmark | ExtraBold 800 | Reviewed logo outlines |
 
-Use the local variable WOFF2 exports for normal and italic styles on the website and browser demo. Keep the supplied OFL notice with deployed fonts. The source TTF files are unmodified upstream Montserrat 9.000 files, recorded in `fonts/provenance.json`. The wordmark instantiates weight 700 before outlining.
+Use the local variable WOFF2 exports for normal and italic styles on the website and browser demo. Keep the supplied OFL notice with deployed fonts. The source TTF files are unmodified upstream Montserrat 9.000 files, recorded in `fonts/provenance.json`. The reviewed wordmark outlines are checked in; generation does not instantiate or reshape the lettering.
 
 Unification concerns family and hierarchy, not identical binaries on every target. Embedded builds retain their current Montserrat Regular subsets at 10/14/18/28px, rather than adding weights to flash without a demonstrated UI need. Render and verify target-specific glyphs through the existing LVGL converter. The terminal keeps Unscii at its current sizes; code on the website keeps its existing monospace stack. Never apply Montserrat to terminal cells or code blocks merely to make every element use one font.
 
@@ -63,8 +59,8 @@ Prefer black/ink on a light background and white on a dark background. The optio
 
 ## Avoid
 
-Do not stretch, rotate, round the modules, close their gaps, add shadows/gradients to the core mark, or recolor its modules independently. Do not use a white transparent logo on a light surface. Keep other applications, screenshots and hardware photos outside the mark's clear space.
+Do not stretch, rotate, alter the corner radii, close the gaps, add shadows/gradients to the core mark, or recolor its modules independently. Do not use a white transparent logo on a light surface. Keep other applications, screenshots and hardware photos outside the mark's clear space.
 
 ## Status
 
-The symbol direction was selected in conversation. The Montserrat family and 400/600/700 hierarchy were subsequently selected for unification. The layout rules and optional palette are the initial working specification packaged with it. Future changes should receive a visual review and a version update. Similarity research was preliminary; it does not establish exclusivity.
+The November monogram and outlined lettering were reviewed before adoption. The 400/600/700 UI hierarchy, neutral palette and optional indigo remain unchanged. The principal supplied variant combines a white symbol with black lettering and needs a suitable mid-tone background. Future changes require a visual review and version update.

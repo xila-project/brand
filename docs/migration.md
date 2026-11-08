@@ -41,3 +41,13 @@ Copy the complete `assets/typography/` directory into the consumer's static `fon
 Regenerated horizontal logos already contain Montserrat Bold outlines and need no font download. Record the exact 1.1.0 import commit beside the deployment copies. The embedded OS already uses Montserrat Regular and does not need additional font weights for this update.
 
 Change the master, regenerate, validate, review and release in brand. Import only the selected assets into consumers and record that version. Preserve old releases; avoid moving `main` references for reproducible builds. Automating this process can be a later, separate change.
+
+### Monogram identity 2.0.0
+
+The November 2026 monogram replaces the earlier four-rectangle mark. Import
+reviewed symbol, horizontal lockup, avatar, social and favicon exports from
+the same brand commit. The lockup now uses checked-in ExtraBold 800 outlines;
+UI typography assets and the 400/600/700 hierarchy remain unchanged. Existing
+asset filenames are retained; the principal white-symbol/black-text variant
+is an additional option for mid-tone backgrounds. Consumer migrations and
+workspace gitlink updates are separate changes after the brand review.

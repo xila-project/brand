@@ -4,11 +4,11 @@ This repository owns Xila's visual identity and reusable artwork. It is not the 
 
 ## Selected direction
 
-- Preserve **Continuity**: four separate rectangular modules, a square silhouette, sharp corners and the original orientation. The mark is deliberately abstract; do not introduce a literal X or redesign it unless the task requests a new direction.
-- `source/symbol.svg` is the editable geometry master. Its current 64-unit viewBox contains four 18-by-38-unit rectangles with 8-unit end separations.
+- Preserve the **Monogram** identity adopted on 8 November 2026: four rounded diagonal arms around a separate central square. Keep the supplied paths, orientation and open separations.
+- `source/symbol.svg` is the editable geometry master in a 64-unit viewBox. `source/lockup.svg` stores the reviewed outlined lockup; its first group must match the symbol master. Recolor the outlines rather than reshaping the lettering at export time. `source/provenance.json` records the supplied originals and the reviewed lettering adaptation.
 - `source/identity.json` owns palette, font, spacing and identity version. Prefer reading these values over duplicating them in scripts or documentation.
 - Black/white are the primary identity. Ink/paper are neutral presentation colors. Indigo remains optional; do not silently promote it to the primary brand color.
-- Montserrat is the shared family: Regular 400 for text, SemiBold 600 for headings, Bold 700 for the wordmark and emphasis. Preserve the embedded Regular-only subsets unless the task explicitly needs another weight. Monospace content is a separate semantic role; keep Unscii in the existing terminal.
+- Montserrat is the shared family: Regular 400 for text, SemiBold 600 for headings, Bold 700 for emphasis, and ExtraBold 800 for the outlined wordmark. Preserve the embedded Regular-only subsets unless the task explicitly needs another weight. Monospace content is a separate semantic role; keep Unscii in the existing terminal.
 - Keep documentation in English, with concise, concrete instructions and root-relative file paths in prose. Preserve the spelling **Xila**.
 
 ## Sources, generated files and history

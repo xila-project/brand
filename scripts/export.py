@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build the SVG, PNG and ICO brand assets from the checked-in sources."""
+from copy import deepcopy
 from pathlib import Path
 from xml.etree import ElementTree as ET
 import hashlib
@@ -7,28 +8,33 @@ import json
 
 import cairosvg
 from fontTools.ttLib import TTFont
-from fontTools.pens.svgPathPen import SVGPathPen
-from fontTools.varLib.instancer import instantiateVariableFont
 from PIL import Image
+
+from svg_utils import clean
 
 ROOT = Path(__file__).resolve().parents[1]
 SVG_NS = "http://www.w3.org/2000/svg"
 CONFIG = json.loads((ROOT / "source/identity.json").read_text())
 COLORS = CONFIG["colors"]
 SOURCE = ET.parse(ROOT / "source/symbol.svg").getroot()
-SHAPES = list(SOURCE.find(f"{{{SVG_NS}}}g"))
+LOCKUP = ET.parse(ROOT / "source/lockup.svg").getroot()
+
+
+def recolor(group, color):
+    group = deepcopy(group)
+    group.set("fill", color)
+    for node in group.iter():
+        if "fill" in node.attrib:
+            node.set("fill", color)
+    return ET.tostring(group, encoding="unicode")
 
 
 def symbol(color):
-    rects = "".join(
-        '<rect ' + " ".join(f'{key}="{value}"' for key, value in shape.attrib.items()) + '/>'
-        for shape in SHAPES
-    )
-    return f'<g fill="{color}">{rects}</g>'
+    return recolor(SOURCE.find(f"{{{SVG_NS}}}g"), color)
 
 
 def svg(width, height, body, title="Xila"):
-    return (
+    return clean(
         f'<svg xmlns="{SVG_NS}" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" role="img" aria-labelledby="title">'
         f'<title id="title">{title}</title>{body}</svg>\n'
@@ -48,55 +54,11 @@ def render(content, path, width=None, height=None):
                     output_width=width, output_height=height)
 
 
-def wordmark():
-    """Return outlined glyphs and their exact ink bounds in font units."""
-    from fontTools.pens.boundsPen import BoundsPen
-    from fontTools.pens.transformPen import TransformPen
-    font = TTFont(ROOT / CONFIG["font"], recalcTimestamp=False)
-    if "fvar" in font:
-        instantiateVariableFont(font, {"wght": CONFIG["font_weight"]}, inplace=True)
-    glyphs = font.getGlyphSet()
-    cmap = font.getBestCmap()
-    commands = []
-    cursor = 0
-    bounds = []
-    kern = {}
-    if "kern" in font:
-        for table in font["kern"].kernTables:
-            kern.update(table.kernTable)
-    previous = None
-    for char in CONFIG["name"]:
-        name = cmap[ord(char)]
-        if previous:
-            cursor += kern.get((previous, name), 0)
-        pen = SVGPathPen(glyphs)
-        glyphs[name].draw(TransformPen(pen, (1, 0, 0, 1, cursor, 0)))
-        commands.append(pen.getCommands())
-        bp = BoundsPen(glyphs)
-        glyphs[name].draw(bp)
-        if bp.bounds:
-            a, b, c, d = bp.bounds
-            bounds.append((a + cursor, b, c + cursor, d))
-        cursor += font["hmtx"][name][0]
-        previous = name
-    xmin = min(b[0] for b in bounds)
-    ymin = min(b[1] for b in bounds)
-    xmax = max(b[2] for b in bounds)
-    ymax = max(b[3] for b in bounds)
-    return " ".join(commands), (xmin, ymin, xmax, ymax)
-
-
 def lockup(mark_color, text_color):
-    path, (xmin, ymin, xmax, ymax) = wordmark()
-    scale = CONFIG["wordmark_cap_height_units"] / (ymax - ymin)
-    x = 64 + CONFIG["horizontal_gap_units"]
-    y = (64 + CONFIG["wordmark_cap_height_units"]) / 2
-    width = round(x + (xmax - xmin) * scale, 4)
-    body = symbol(mark_color) + (
-        f'<g transform="translate({x - xmin * scale} {y + ymin * scale}) '
-        f'scale({scale} {-scale})" fill="{text_color}"><path d="{path}"/></g>'
-    )
-    return width, body
+    """Recolor the reviewed outlines without reshaping the wordmark."""
+    mark, lettering = LOCKUP.findall(f"{{{SVG_NS}}}g")
+    width = float(LOCKUP.get("viewBox").split()[2])
+    return width, recolor(mark, mark_color) + recolor(lettering, text_color)
 
 
 def main():
@@ -124,6 +86,7 @@ def main():
     for name, mark, text in (
         ("ink", "ink", "ink"), ("black", "black", "black"),
         ("white", "white", "white"),
+        ("principal", "white", "black"),
         ("indigo-on-dark", "indigo", "white"),
         ("indigo-on-light", "indigo", "ink"),
     ):

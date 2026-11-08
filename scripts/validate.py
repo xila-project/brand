@@ -14,12 +14,20 @@ NS = "{http://www.w3.org/2000/svg}"
 
 def main():
     source = ET.parse(ROOT / "source/symbol.svg").getroot()
-    rects = source.findall(f"{NS}g/{NS}rect")
-    boxes = {tuple(int(rect.get(k)) for k in ("x", "y", "width", "height")) for rect in rects}
-    assert len(boxes) == 4
-    assert {(64 - y - h, x, h, w) for x, y, w, h in boxes} == boxes
-    assert all(min(w, h) == 18 and max(w, h) == 38 for x, y, w, h in boxes)
-    assert all(0 <= x < x + w <= 64 and 0 <= y < y + h <= 64 for x, y, w, h in boxes)
+    assert source.get("viewBox") == "0 0 64 64"
+    assert len(source.findall(f".//{NS}rect")) == 1, "Missing center square"
+    assert len(source.findall(f".//{NS}path")) == 4, "Expected four monogram arms"
+    original = ET.parse(ROOT / "legacy/2026-11-originals/Logo Alix - monogramme Noir.svg").getroot()
+    def geometry(document):
+        return [(node.tag, node.attrib) for node in document.iter()
+                if node.tag in (f"{NS}rect", f"{NS}path")]
+    assert geometry(source) == geometry(original), "Supplied monogram paths were altered"
+    assert source.find(f"{NS}g").get("transform") == f"scale({64 / 617.46})"
+    lockup = ET.parse(ROOT / "source/lockup.svg").getroot()
+    assert ET.tostring(lockup.find(f"{NS}g")) == ET.tostring(source.find(f"{NS}g")), "Lockup symbol differs from master"
+    imported = json.loads((ROOT / "source/provenance.json").read_text())
+    for entry in imported["originals"]:
+        assert hashlib.sha256((ROOT / entry["path"]).read_bytes()).hexdigest() == entry["sha256"], entry["path"]
 
     for entry in json.loads((ROOT / "legacy/provenance.json").read_text()):
         raw = (ROOT / entry["archive_path"]).read_bytes()
@@ -35,7 +43,7 @@ def main():
     assert actual == set(manifest["sha256"]), "Manifest omits or invents assets"
 
     config = json.loads((ROOT / "source/identity.json").read_text())
-    assert config["font_weight"] == 700
+    assert config["font_weight"] == 800
     assert config["typography"]["family"] == "Montserrat"
     provenance = json.loads((ROOT / "fonts/provenance.json").read_text())
     for name, info in provenance["files"].items():
@@ -52,10 +60,15 @@ def main():
     for target in re.findall(r'url\("([^"]+)"\)', css):
         assert (ROOT / "assets/typography" / target).is_file()
 
-    for path in (ROOT / "assets").rglob("*.svg"):
+    vectors = [p for folder in ("source", "assets", "integrations")
+               for p in (ROOT / folder).rglob("*.svg")]
+    for path in vectors:
         doc = ET.parse(path).getroot()
         assert doc.get("viewBox"), path
         assert doc.find(f"{NS}title") is not None, path
+        assert path.read_text().count('xmlns=') == 1, path
+        assert all(node.tag in {f"{NS}{tag}" for tag in ("svg", "title", "g", "path", "rect")} for node in doc.iter()), path
+        assert not any(k in ("class", "style", "data-name") or k.startswith("on") for node in doc.iter() for k in node.attrib), path
         assert not doc.findall(f".//{NS}text"), f"Unoutlined text in {path}"
         assert not doc.findall(f".//{NS}script"), path
         assert not any(k.endswith("href") for node in doc.iter() for k in node.attrib), path
@@ -84,7 +97,7 @@ def main():
                             if 0 <= c < size and 0 <= d < size and (c,d) not in seen and mask.getpixel((c,d)) >= 128:
                                 seen.add((c,d))
                                 todo.append((c,d))
-            assert groups == 4, (path, groups)
+            assert groups == 5, (path, groups)
 
     with Image.open(ROOT / "assets/social/xila-social-1280x640.png") as image:
         assert image.size == (1280, 640)
@@ -100,7 +113,7 @@ def main():
             if "://" in target or target.startswith("#"):
                 continue
             assert (path.parent / target.split("#",1)[0]).exists(), (path, target)
-    print(f"PASS: geometry, 3 legacy hashes, {len(actual)} delivery files, SVG portability, raster separations, icons and document links")
+    print(f"PASS: five-part geometry, original and legacy hashes, {len(actual)} delivery files, SVG portability, raster separations, icons and document links")
 
 
 if __name__ == "__main__":
