@@ -5,6 +5,7 @@ from xml.etree import ElementTree as ET
 import hashlib
 import json
 import re
+from urllib.parse import urlsplit
 from PIL import Image
 from fontTools.ttLib import TTFont
 
@@ -112,7 +113,7 @@ def main():
         for target in re.findall(r"\]\(([^\s)]+)\)", path.read_text()):
             if "://" in target or target.startswith("#"):
                 continue
-            assert (path.parent / target.split("#",1)[0]).exists(), (path, target)
+            assert (path.parent / urlsplit(target).path).exists(), (path, target)
     print(f"PASS: five-part geometry, original and legacy hashes, {len(actual)} delivery files, SVG portability, raster separations, icons and document links")
 
 
