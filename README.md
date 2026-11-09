@@ -27,6 +27,7 @@ The symbol has four rounded diagonal arms around a separate central square. The 
 | Per-repository social previews | [Ten repository-specific PNGs and SVGs](docs/repository-social-previews.md) |
 | README headers | [Transparent themed SVGs](docs/readme-headers.md) |
 | Browser tab | [SVG favicon](assets/favicon/favicon.svg) and [ICO fallback](assets/favicon/favicon.ico) |
+| Documents and presentations | [Typst templates and PDF specimens](templates/typst/README.md) |
 | Raster integrations | [PNG exports](exports/png/) at 16–1024 pixels |
 | Website migration | [Compatibility exports](integrations/website/) |
 
