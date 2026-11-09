@@ -11,13 +11,13 @@ These PDFs are specimens, not product specifications. Example dates and content 
 
 ## Build
 
-Install Typst separately; the templates and previews were checked with **Typst 0.15.1**. From the repository root:
+Install uv and Typst separately; the templates and previews were checked with **Typst 0.15.1**. From the repository root:
 
 ```sh
-python3 scripts/build_typst.py
+uv run --locked python scripts/build_typst.py
 ```
 
-The script sets the font path, disables system fonts, fixes the PDF creation timestamp and rejects compiler diagnostics. It writes to `templates/typst/previews/`; use `--output /tmp/xila-typst` for temporary PDFs or `--typst /path/to/typst` to select an executable. Use the same CLI version for byte-for-byte regeneration.
+`uv run --locked` uses the root workspace and its locked Python environment. The script sets the font path, disables system fonts, fixes the PDF creation timestamp and rejects compiler diagnostics. It writes to `templates/typst/previews/`; use `--output /tmp/xila-typst` for temporary PDFs or `--typst /path/to/typst` to select an executable. Use the same CLI version for byte-for-byte regeneration.
 
 To compile your own source from the repository root:
 

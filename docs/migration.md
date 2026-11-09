@@ -24,7 +24,7 @@ Do not remove website's files before replacing its references and checking exter
 ## Rollout
 
 1. Populate the `Xila-Project/brand` repository (created as private). Review the generated assets and tag a version, initially `v1.0.0`.
-2. From a local brand checkout, run `python scripts/sync_website.py /path/to/website`. The script copies the three compatibility exports with the existing filenames.
+2. From a local brand checkout, run `uv run --locked python scripts/sync_website.py /path/to/website`. The script copies the three compatibility exports with the existing filenames.
 3. Copy `assets/favicon/favicon.svg` to website's `src/public/images/favicon.svg`, then change only the favicon `head` entry to `/images/favicon.svg`. Keep `themeConfig.logo` pointing to `/images/logo_light.svg` and `/images/logo_dark.svg`.
 4. Add `src/public/images/README.md` documenting the brand repository, **the actual release tag or commit imported**, and the sync command. Keep design editing in brand.
 5. Format changed text files, run `npm run check` and `git diff --check` in website. Inspect light/dark navigation and the favicon, then submit a migration PR.

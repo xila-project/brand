@@ -4,4 +4,4 @@
 
 `identity.json` defines export colors, spacing, the bundled font and the identity version. The horizontal wordmark is generated as vector paths from this font, so published SVGs do not depend on the reader’s installed fonts.
 
-After a change, run `python scripts/export.py` and `python scripts/validate.py` from the repository root. Review the SVGs in light and dark contexts before committing updated exports.
+After a change, run `uv run --locked python scripts/export.py` and `uv run --locked python scripts/validate.py` from the repository root. Review the SVGs in light and dark contexts before committing updated exports.
