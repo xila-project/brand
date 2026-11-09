@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Local tooling for Xila visual identity exports and validation"
 requires-python = ">=3.11"
 dependencies = [
-  "CairoSVG==2.8.2",
+  "CairoSVG==2.9.1",
   "fonttools==4.61.1",
   "Pillow==13.0.0",
   "Brotli==1.2.0",
