@@ -28,8 +28,8 @@ The editable SVG masters live in `source/repository-social/`. Lettering is outli
 Edit the master vectors, then run the existing commands from the brand root:
 
 ```sh
-python scripts/export.py
-python scripts/validate.py
+uv run --locked python scripts/export.py
+uv run --locked python scripts/validate.py
 git diff --check
 ```
 

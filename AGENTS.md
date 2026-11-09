@@ -33,13 +33,13 @@ Use vector geometry for the established mark and lettering. Do not replace it wi
 
 ## Working environment
 
-Use Python 3.10+ with Cairo available. Install the pinned Python dependencies in an isolated environment, from the repository root:
+Use uv with Cairo available. The root `pyproject.toml` defines the script-only uv workspace, `.python-version` selects Python 3.13, and `uv.lock` pins direct and transitive dependencies. The scripts support Python 3.11+. From the repository root:
 
 ```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
+uv sync --locked
 ```
+
+Run scripts with `uv run --locked`; uv manages `.venv/` without shell activation or pip setup. Change dependencies in `pyproject.toml`, regenerate `uv.lock` with `uv lock`, then rerun export and validation. Keep `.venv/` and `.uv-cache/` out of Git.
 
 On Debian/Ubuntu the native Cairo runtime is supplied by `libcairo2`. Keep font inputs local and exports deterministic; generation must not fetch remote design assets or add timestamps. Reuse existing tools before adding dependencies. Do not commit virtual environments, caches or temporary preview files. Generated delivery assets are intentionally committed.
 
@@ -48,8 +48,8 @@ On Debian/Ubuntu the native Cairo runtime is supplied by `libcairo2`. Keep font 
 For a source or export-tooling change, run:
 
 ```sh
-python scripts/export.py
-python scripts/validate.py
+uv run --locked python scripts/export.py
+uv run --locked python scripts/validate.py
 git diff --check
 ```
 
@@ -63,7 +63,7 @@ For documentation-only changes, check referenced paths and `git diff --check`. D
 
 `brand` owns editable masters. Consumers keep deployment copies so rendering and builds do not depend on runtime downloads or authenticated access to this repository, which may be private.
 
-`python scripts/sync_website.py /path/to/website` explicitly replaces the three compatibility logo files. It does not copy the favicon or change configuration. Follow `docs/migration.md` for those steps. Preserve the existing logo URLs and record the exact imported brand commit in the consumer. Do not replace working image URLs with GitHub blob-page links.
+`uv run --locked python scripts/sync_website.py /path/to/website` explicitly replaces the three compatibility logo files. It does not copy the favicon or change configuration. Follow `docs/migration.md` for those steps. Preserve the existing logo URLs and record the exact imported brand commit in the consumer. Do not replace working image URLs with GitHub blob-page links.
 
 Before changing a consumer repository, read its own `AGENTS.md`, preserve unrelated work and run its required checks. Website changes require formatting, `npm run check` and `git diff --check`. Do not merge or deploy a consumer merely because artwork has been updated here; follow the user's requested delivery scope.
 

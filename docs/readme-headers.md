@@ -28,8 +28,8 @@ Each header is a self-contained 1280 × 224 SVG with outlined lettering and a tr
 From the brand root:
 
 ```sh
-python scripts/export.py
-python scripts/validate.py
+uv run --locked python scripts/export.py
+uv run --locked python scripts/validate.py
 git diff --check
 ```
 
