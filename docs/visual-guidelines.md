@@ -37,7 +37,7 @@ Use the local variable WOFF2 exports for normal and italic styles on the website
 
 Unification concerns family and hierarchy, not identical binaries on every target. Embedded builds retain their current Montserrat Regular subsets at 10/14/18/28px, rather than adding weights to flash without a demonstrated UI need. Render and verify target-specific glyphs through the existing LVGL converter. The terminal keeps Unscii at its current sizes; code on the website keeps its existing monospace stack. Never apply Montserrat to terminal cells or code blocks merely to make every element use one font.
 
-Use this hierarchy on future documents and templates; the current change does not create new document templates or certify small-screen rendering.
+Use this hierarchy in documents and templates. Reusable A4 document and 16:9 presentation templates are available in `templates/typst/`; their PDF specimens demonstrate the hierarchy on light and dark surfaces. These templates do not certify small-screen rendering.
 
 ## Palette
 
