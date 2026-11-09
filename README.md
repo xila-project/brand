@@ -54,22 +54,22 @@ Use Montserrat across the logo, website, documents and proportional OS interface
 
 ## Regenerate
 
-Python 3.10+ and Cairo are required. On Debian/Ubuntu, install `libcairo2` if Cairo is unavailable. From this repository:
+uv and Cairo are required. `.python-version` selects Python 3.13; the scripts support Python 3.11+. Dependencies are declared in `pyproject.toml` and locked in `uv.lock`. On Debian/Ubuntu, install `libcairo2` if Cairo is unavailable. From this repository:
 
 ```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
-python scripts/export.py
-python scripts/validate.py
+uv sync --locked
+uv run --locked python scripts/export.py
+uv run --locked python scripts/validate.py
 ```
+
+The root is a script-only uv workspace, so no Python package is built or published. `uv sync --locked` creates `.venv/`; no activation or pip setup is needed. To update dependencies, edit `pyproject.toml`, run `uv lock`, then rerun export and validation. Keep the lockfile committed. Typst is a separate CLI dependency; see `templates/typst/README.md`.
 
 All design inputs and the font are local. Regeneration does not fetch network assets. Edit `source/`, then regenerate; do not edit generated SVGs or PNGs individually. Commit generated exports so consumers do not need Python or Cairo.
 
 ## Apply to a local website checkout
 
 ```sh
-python scripts/sync_website.py /path/to/website
+uv run --locked python scripts/sync_website.py /path/to/website
 ```
 
 This explicit command replaces only the three existing logo files under `src/public/images`. It leaves configuration, documentation and unrelated images untouched. Review its diff and run the website's own checks before opening a PR. Existing public URLs remain stable.
