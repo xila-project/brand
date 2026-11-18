@@ -9,6 +9,8 @@
 [Try Xila](https://platforms.xila.dev/) ·
 [Community](https://matrix.to/#/#xila:anneraud.fr)
 
+[![vulnerabilities](https://vulnerabilities.xila.dev/badges/2c59ee370b49cdf25d14ae18829b4c77.svg)](https://vulnerabilities.xila.dev/public/8d5b3dd30a281079a424ad6930c4f8b1)
+
 The source assets, usage guide and exports for the **Monogram** identity adopted on 8 November 2026 (version 2.0.0).
 
 The symbol has four rounded diagonal arms around a separate central square. The supplied vector geometry and reviewed outlined lettering are kept in editable masters; generation needs no installed logo font.
